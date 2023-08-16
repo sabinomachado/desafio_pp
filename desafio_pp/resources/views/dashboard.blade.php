@@ -9,7 +9,7 @@
 
                 <div class="grid text-sm grid-cols-1">
                 
-                    <form  method="post" x-data="{ payment_method: '{{ old('payment_method', 'BOLETO') }}' }" >
+                    <form action="{{route('payment') }}" method="post" x-data="{ payment_method: '{{ old('payment_method', 'BOLETO') }}' }" >
                         @include('components.form')
                     </form>
                 </div>
