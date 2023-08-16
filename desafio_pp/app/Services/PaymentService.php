@@ -39,7 +39,7 @@ class PaymentService implements PaymentServiceInterface
             'customer' => $this->customerId,
             'billingType' => $paymentMethod,
             'value' => '13',
-            'dueDate' => '2023-08-20', //adicionar carbon.
+            'dueDate' => '2023-08-20', //adicionar carbon(?)
             'remoteIp' => $data['ip'],
         ];
 
