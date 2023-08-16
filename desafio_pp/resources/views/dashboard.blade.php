@@ -1,17 +1,20 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+        <div class="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
+            <div class="container max-w-screen-lg mx-auto">
+            <div>        
+                <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+                <div class="grid text-sm grid-cols-1">
+                    @include('components.payment')
+                </div>    
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
+                <div class="grid text-sm grid-cols-1">
+                
+                    <form  method="post" x-data="{ payment_method: '{{ old('payment_method', 'BOLETO') }}' }" >
+                        @include('components.form')
+                    </form>
+                </div>
                 </div>
             </div>
+            </div>
         </div>
-    </div>
 </x-app-layout>
